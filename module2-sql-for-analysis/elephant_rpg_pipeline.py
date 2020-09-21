@@ -31,3 +31,40 @@ characters=sl_cursor.execute("SELECT * FROM charactercreator_character;").fetcha
 print(characters)
 
 ####### Create the Character table in Postgres and insert data ######
+
+create_character_table_query = '''
+CREATE TABLE IF NOT EXISTS rpg_characters (
+    character_id SERIAL PRIMARY KEY,
+    name VARCHAR(30),
+    level INT,
+    exp INT,
+    hp INT,
+    strength INT, 
+    intelligence INT,
+    dexterity INT,
+    wisdom INT
+)
+'''
+cursor.execute(create_character_table_query)
+conn.commit()
+
+for character in characters[0:10]:
+    insert_query=f'''INSERT INTO rpg_characters
+    (character_id, name, level, exp, hp, strength, intelligence, dexterity, wisdom) VALUES
+    {character}
+    '''
+
+    cursor.execute(insert_query)
+conn.commit()
+
+
+# #ALternatetive approach (faster)
+
+
+# big_query=f'''INSERT INTO rpg_characters
+#     (character_id, name, level, exp, hp, strength, intelligence, dexterity, wisdom) VALUES'''
+
+# for character in characters:
+#     big_query+=f'{character},'
+# print(big_query)
+
