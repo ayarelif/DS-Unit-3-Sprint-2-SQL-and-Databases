@@ -15,6 +15,7 @@ LIMIT 10;
 """
 
 result1 = cur.execute(query1).fetchall()
+print(result1)
 
 # Question 2: What is the average age of an employee at the time of their hiring?
 
@@ -26,7 +27,7 @@ FROM Employee;
 """
 
 result2 = cur.execute(query2).fetchall()
-
+print(result2)
 # Question Strestch: How does the average age of employee at hire vary by city?
 
 query_stretch1 = """
@@ -36,7 +37,7 @@ FROM Employee
 GROUP BY City;
 """
 result_stretch1 = cur.execute(query_stretch1).fetchall()
-
+print(result_stretch1)
 
 #### Part 3 - Sailing the Northwind Seas
 
@@ -54,7 +55,7 @@ ON Product.SupplierId = Supplier.Id
 ORDER BY UnitPrice DESC;
 """
 result3 = cur.execute(query3).fetchall()
-
+print(result3)
 # Question 4: What is the largest category (by number of unique products in it)?
 
 query4 = """
@@ -70,7 +71,7 @@ LIMIT 1;
 """
 
 result4 = cur.execute(query4).fetchall()
-
+print(result4)
 
 # Question stretch:*Stretch*) Who's the employee with the most territories? Use `TerritoryId`
 # (not name, region, or other fields) as the unique identifier for territories.
@@ -82,7 +83,8 @@ SELECT
 FROM EmployeeTerritory
 LIMIT 1;
 """
-result_stretch1 = cur.execute(query_stretch1).fetchall()
+result_stretch2 = cur.execute(query_stretch1).fetchall()
+print(result_stretch2)
 # I will do later if I have time
 
 

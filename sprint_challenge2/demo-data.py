@@ -49,7 +49,6 @@ cursor.execute("INSERT INTO demo (s,x,y) Values ('f',8,7);")
 
 connection.commit()
 
-breakpoint()
 
 # Question 1 Count how many rows you have - it should be 3!
 
