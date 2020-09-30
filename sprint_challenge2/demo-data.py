@@ -23,7 +23,7 @@ import sqlite3
 
 ##### Make connection and cursor
 
-connection=sqlite3.connect("demo-data.sqlite3")
+connection=sqlite3.connect("demo_data_test.sqlite3")
 cursor=connection.cursor()
 
 ##### Create the table ######
